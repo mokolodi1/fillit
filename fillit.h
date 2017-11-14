@@ -30,6 +30,7 @@ typedef struct	s_tet
 
 typedef struct	s_map
 {
+	// what is m
 	int			m;
 	int			ntet;
 	int			size;

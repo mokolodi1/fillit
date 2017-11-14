@@ -42,6 +42,7 @@ static t_tet	*get_next_tetrimino(char c, char *str)
 
 t_tet			**insert_array(char *buf)
 {
+	// could combine letter and i
 	int		i;
 	char	letter;
 	char	*tet;
@@ -53,14 +54,16 @@ t_tet			**insert_array(char *buf)
 		return (NULL);
 	while (*buf)
 	{
+		// why 20? 5*4?
 		tet = ft_strnew(20);
 		tet = ft_strncpy(tet, buf, 20);
 		if (count_hash(tet) && connections(tet))
 			tetriminos[i++] = get_next_tetrimino(letter++, tet);
 		else
 			return (NULL);
-		buf = buf + 21;
+		buf = buf + 21; // +=
 	}
+	// why is this while loop here?
 	while (i < 27)
 		tetriminos[i++] = get_next_tetrimino('\0', NULL);
 	return (tetriminos);

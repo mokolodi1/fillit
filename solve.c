@@ -24,6 +24,7 @@ static void	reset_coordinates(t_tet **tetriminos, int j, int i)
 		tetriminos[++j]->coord = -1;
 }
 
+// static -- good use of this otherwise
 int			solve_map(t_tet **tetriminos, t_map *map, int i)
 {
 	int j;

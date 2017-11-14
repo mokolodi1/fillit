@@ -10,6 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// "It's really long bc my code is shit" -- what?
+// Things could be named a tiny bit better, but this is really well written
+// overall. (Tiny honestly means tiny and isn't trying to make you feel
+// better.) Who told you your code is shit? You literally have helpful
+// comments and well-named function names! 
+
 #include "fillit.h"
 
 static void		exit_error(char *str)
@@ -24,6 +30,7 @@ int				main(int argc, char **argv)
 	t_tet		**tetriminos;
 	char		*buf;
 
+	// if malloc fails?
 	buf = ft_memalloc(BUF_SIZE);
 	if (argc != 2)
 		exit_error("usage: ./fillit source_file");
@@ -34,6 +41,7 @@ int				main(int argc, char **argv)
 	if (!(tetriminos = insert_array(buf)))
 		exit_error("error");
 	solve(tetriminos);
+	// doesn't matter if memory is "leaked" at end
 	ft_memdel((void**)&tetriminos);
 	ft_memdel((void**)&buf);
 	return (0);

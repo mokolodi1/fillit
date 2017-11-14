@@ -87,6 +87,7 @@ int			tet_width(char *t)
 ** find the leftmost relevant index of the tetrimino
 */
 
+// wtf are these variables? doesn't row col work better here?
 static int	leftmost(char *t)
 {
 	int	x;
@@ -116,6 +117,7 @@ char		*reduce_tetrimino(char *t)
 
 	i = leftmost(t);
 	count = 0;
+	// why 14?
 	reduced = (char *)malloc(sizeof(char) * 14);
 	reducedcpy = reduced;
 	while (t[i] && count < 4)
